@@ -26,3 +26,6 @@ elif score >= 2:
     print("good job", name)
 else:
     print("keep praticing", name)
+
+with open("result.txt", "a") as file:
+    file.write(f"{name} - {score}/{len(questions)}\n") #3/4
