@@ -1,7 +1,6 @@
 import os
 from dotenv import load_dotenv
 from question import questions
-
 load_dotenv()
 admin_password = os.getenv("QUIZ_ADMIN_PASSWORD")
 open_admin = input("do u want to open admein mode ? yes/no:")
@@ -11,33 +10,22 @@ if open_admin.lower() == "yes":
         print("admin! hi...")
     else:
         print("wrong password")
-
 name = input("what your name?")
-
-
 print("welcome")
-
-
 score = 0 
-
 for item in questions:
     answer = input(item["question"])
-
     if answer.lower() == item["answer"]:
         print("correct")
         score += 1 
     else:
         print("wrong")
-
-
 print("your score is: ", score, "out of ", len(questions))
-
 if score == len(questions):
     print("excellent job", name)
 elif score >= 2:
     print("good job", name)
 else:
     print("keep praticing", name)
-
-with open("result.txt", "a") as file:
-    file.write(f"{name} - {score}/{len(questions)}\n") #3/4
+with open("results.txt", "a") as file:
+    file.write(f"{name} - {score}/{len(questions)}\n") 

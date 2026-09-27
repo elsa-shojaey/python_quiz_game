@@ -3,7 +3,7 @@ __pycache__/
 *.pyc
 
 # quiz results
-result.txt
+results.txt
 
 # log files
 *.log
